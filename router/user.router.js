@@ -1,8 +1,8 @@
 const express = require("express");
 // import express from "express";
-const { getUser } = require("../controller/user/getUser");
-const { createUser } = require("../controller/user/createUser");
-const { apiSingIn } = require("../controller/user/Signin");
+const { getUser } = require("../controller/get/getUser");
+const { createUser } = require("../controller/post/createUser");
+const { apiSingIn } = require("../controller/get/Signin");
 const userRouter = express.Router();
 
 userRouter.post("/api/signin", apiSingIn);

@@ -1,8 +1,8 @@
 // import express from "express";
 const express = require("express");
-const { getCategory } = require("../controller/category/getCategory");
-const { createCategory } = require("../controller/category/createCategory");
-const { updateCategory } = require("../controller/category/updateCategory");
+const { getCategory } = require("../controller/get/getCategory");
+const { createCategory } = require("../controller/post/createCategory");
+const { updateCategory } = require("../controller/update/updateCategory");
 const categoryRouter = express.Router();
 categoryRouter
   .get("/api/category", getCategory)
