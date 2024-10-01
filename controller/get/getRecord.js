@@ -6,7 +6,7 @@ exports.getRecord = async (request, response) => {
   try {
     const getRecord = await sql`SELECT * FROM Records
 WHERE userid=${user_id}`;
-    response.status(200).json({ message: "true", data: getRecord });
+    response.status(200).json({ data: getRecord });
   } catch (error) {
     response.status(400).json(error);
   }
