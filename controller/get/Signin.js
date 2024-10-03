@@ -8,7 +8,7 @@ exports.apiSingIn = async (request, response) => {
   try {
     const users = await sql`SELECT * FROM  users
               WHERE email=${email} and userpassword=${userpassword}`;
-    response.status(200).json({ success: "amjilttai newterlee", user: users });
+    response.status(200).json({user: users });
   } catch (error) {
     response.status(400).json({ error: error });
   }

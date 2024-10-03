@@ -5,5 +5,5 @@ const { createUser } = require("../controller/post/createUser");
 const { apiSingIn } = require("../controller/get/Signin");
 export const userRouter = express.Router();
 
-userRouter.get("/api/signin", apiSingIn).post("/api/signup", createUser);
+userRouter.post("/api/signIn", apiSingIn).post("/api/signup", createUser);
 // module.exports = userRouter;
