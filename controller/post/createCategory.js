@@ -5,9 +5,10 @@ exports.createCategory = async (request, response) => {
   const { categoryname, description } = request.body;
 
   try {
-    await sql` INSERT INTO Category (categoryname, description)
-VALUES (${categoryname}, ${description})`;
-    response.status(201).json("true");
+    const data = await sql` INSERT INTO Category (categoryname, description)
+VALUES (${categoryname}, ${description})
+RETURNING *`;
+    response.status(201).json(data);
   } catch (error) {
     response.status(400).json(error);
   }
