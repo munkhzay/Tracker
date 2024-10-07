@@ -9,6 +9,6 @@ categoryRouter
   .get("/api/category", getCategory)
   .post("/api/category", createCategory)
   .put("/api/category/:id", updateCategory)
-  .delete("/api/category", deleteCategory);
+  .delete("/api/category/:id", deleteCategory);
 
 module.exports = categoryRouter;
