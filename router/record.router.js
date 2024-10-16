@@ -9,6 +9,6 @@ recordRouter
   .get("/api/transaction", getRecord)
   .post("/api/transaction", createRecord)
   .put("/api/transaction/:id", updateRecord)
-  .delete("/api/transaction/delete", deleteRecord)
+  .delete("/api/transaction/delete/:id", deleteRecord)
   .get("/api/transaction/join", join);
 module.exports = recordRouter;
