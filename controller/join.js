@@ -14,3 +14,14 @@ exports.join = async (request, response) => {
 };
 // ${amount}${category_image}
 // ${description}
+// exports.incomeAndExpence = async (request, response) => {
+//   const { id } = request.params;
+//   try {
+//     const sum = await sql` SELECT SUM(amount)
+//   FROM records
+//   WHERE userid = ${id};`;
+//     response.status(200).json(sum);
+//   } catch (error) {
+//     response.status(400).json(error);
+//   }
+// };
