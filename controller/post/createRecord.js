@@ -11,6 +11,6 @@ VALUES (${userid}, ${recordname}, ${amount}, ${description}, ${categoryid}, ${tr
 RETURNING *`;
     response.status(200).json(createRecord);
   } catch (error) {
-    response.status(200).json(error);
+    response.status(400).json(error);
   }
 };

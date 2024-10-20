@@ -1,10 +1,12 @@
-// const express = require("express");
-import cors from "cors";
-import express from "express";
-// const userRouter = require("./router/user.router");
+const express = require("express");
+// import cors from "cors";
+// import express from "express";
+// import userRouter from "./router/user.router";
+const cors = require("cors");
+const userRouter = require("./router/user.router");
 const categoryRouter = require("./router/category.router");
 const recordRouter = require("./router/record.router");
-import { userRouter } from "./router/user.router";
+// import { userRouter } from "./router/user.router";
 
 const app = express();
 app.use(cors());
