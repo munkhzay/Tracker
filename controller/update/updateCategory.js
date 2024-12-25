@@ -6,7 +6,7 @@ exports.updateCategory = async (request, response) => {
   const { id } = request.params;
 
   try {
-    const updateCategory = await pool`UPDATE category
+    const updateCategory = await sql`UPDATE category
   SET categoryname=${categoryname}
   WHERE categoryid=${id};`;
     response.status(200).json(updateCategory);

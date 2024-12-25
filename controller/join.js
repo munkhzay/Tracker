@@ -4,7 +4,7 @@ const { sql, pool } = require("../database");
 exports.join = async (request, response) => {
   const { description, amount, category_image } = request.body;
   try {
-    const join = await pool`SELECT *
+    const join = await sql`SELECT *
                            FROM Category
                            INNER JOIN records ON records.categoryid=category.categoryid;`;
     response.status(200).json(join);

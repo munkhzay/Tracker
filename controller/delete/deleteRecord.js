@@ -4,7 +4,7 @@ const { sql, pool } = require("../../database");
 exports.deleteRecord = async (request, response) => {
   const { id } = request.params;
   try {
-    await pool`DELETE FROM Records
+    await sql`DELETE FROM Records
 WHERE recordid=${id}`;
     response.status(200).json({ success: "true" });
   } catch (error) {

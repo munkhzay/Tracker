@@ -6,7 +6,7 @@ exports.deleteCategory = async (request, response) => {
   console.log(id);
 
   try {
-    const data = await pool`DELETE FROM category
+    const data = await sql`DELETE FROM category
 WHERE categoryid=${id}`;
     response.status(200).json(data);
   } catch (error) {

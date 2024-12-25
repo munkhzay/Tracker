@@ -4,7 +4,7 @@ const { sql, pool } = require("../../database");
 exports.updateUser = async (request, response) => {
   const { email, username, userpassword } = request.body;
   try {
-    const putSignUp = await pool` UPDATE users
+    const putSignUp = await sql` UPDATE users
 SET email=${email}, username=${username}, userpassword=${userpassword}
 WHERE userid=${id}; `;
     response.status(200).json(putSignUp);

@@ -4,7 +4,7 @@ const { sql, pool } = require("../../database");
 
 exports.getUser = async (request, response) => {
   try {
-    const getuser = await pool` CREATE TABLE Users (
+    const getuser = await sql` CREATE TABLE Users (
                                  userid SERIAL PRIMARY KEY ,
                                  email VARCHAR(50) UNIQUE NOT NULL,
                                  username VARCHAR (50) NOT NULL,

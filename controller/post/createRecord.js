@@ -6,7 +6,7 @@ exports.createRecord = async (request, response) => {
     request.body;
   try {
     const createRecord =
-      await pool`INSERT INTO records (userid, recordname, amount, description, categoryid , transaction)
+      await sql`INSERT INTO records (userid, recordname, amount, description, categoryid , transaction)
 VALUES (${userid}, ${recordname}, ${amount}, ${description}, ${categoryid}, ${transaction})
 RETURNING *`;
     response.status(200).json(createRecord);

@@ -6,7 +6,7 @@ exports.createUser = async (request, response) => {
   console.log(request.body);
   try {
     const data =
-      await pool` INSERT INTO Users ( email, username, userpassword, avatar_img)
+      await sql` INSERT INTO Users ( email, username, userpassword, avatar_img)
   VALUES (${email}, ${username}, ${userpassword}, ${avatar_img}
 
   )  RETURNING *`;

@@ -6,7 +6,7 @@ exports.apiSingIn = async (request, response) => {
   console.log(request.body);
 
   try {
-    const users = await pool`SELECT * FROM  users
+    const users = await sql`SELECT * FROM  users
               WHERE email=${email} and userpassword=${userpassword}`;
     response.status(200).json(users);
   } catch (error) {
