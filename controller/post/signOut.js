@@ -1,9 +1,9 @@
 const { request, response } = require("express");
-const { sql } = require("../../database");
+const { sql, pool } = require("../../database");
 
 exports.signOut = async (req, res) => {
   try {
-    const data = await sql`SELECT userid
+    const data = await pool`SELECT userid
        FROM users`;
     res.status(200).json(data);
   } catch (error) {

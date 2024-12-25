@@ -1,11 +1,11 @@
 const { request, response } = require("express");
-const { sql } = require("../../database");
+const { sql, pool } = require("../../database");
 
 exports.createCategory = async (request, response) => {
   const { categoryname, description } = request.body;
 
   try {
-    const data = await sql` INSERT INTO Category (categoryname, description)
+    const data = await pool` INSERT INTO Category (categoryname, description)
 VALUES (${categoryname}, ${description})
 RETURNING *`;
     response.status(201).json(data);

@@ -1,10 +1,10 @@
 const { request } = require("express");
-const { sql } = require("../../database");
+const { sql, pool } = require("../../database");
 // import { sql } from "../../database/app";
 
 exports.getUser = async (request, response) => {
   try {
-    const getuser = await sql` CREATE TABLE Users (
+    const getuser = await pool` CREATE TABLE Users (
                                  userid SERIAL PRIMARY KEY ,
                                  email VARCHAR(50) UNIQUE NOT NULL,
                                  username VARCHAR (50) NOT NULL,
