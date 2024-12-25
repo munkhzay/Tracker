@@ -18,4 +18,5 @@ app.use(recordRouter);
 const port = 8070;
 app.listen(port, () => {
   console.log(`http://localhost:${port}/`);
+  // console.log("tracker-front-omega.vercel.app");
 });
